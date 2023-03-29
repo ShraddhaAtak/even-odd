@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: even-odd-number-generator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: even-odd-number-generator
+  template:
+    metadata:
+      labels:
+        app: even-odd-number-generator
+    spec:
+      containers:
+        - name: even-odd-number-generator
+          image: even-odd-number-generator
+          ports:
+            - containerPort: 5000
